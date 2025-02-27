@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFCC99; /* Cat orange color theme */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            background-color: #FF9933;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #FF6600;
+        }
+
+        .fact {
+            margin-top: 20px;
+            font-size: 18px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cat Facts</h1>
+        <button id="factButton">Show Me a Cat Fact!</button>
+        <p id="factDisplay" class="fact"></p>
+    </div>
+    <script>
+        const facts = [
+            "Cats have five toes on their front paws, but only four toes on their back paws.",
+            "A group of cats is called a clowder.",
+            "Cats can rotate their ears 180 degrees.",
+            "The world's largest cat measured 48.5 inches long.",
+            "Cats sleep for 70% of their lives.",
+            "A cat's nose is as unique as a human's fingerprint.",
+            "Cats have whiskers on the backs of their front legs.",
+            "A cat can jump up to six times its length.",
+            "The oldest recorded cat lived to be 38 years old.",
+            "Cats have a special reflective layer behind their retinas called the tapetum lucidum, which enhances their night vision."
+        ];
+
+        document.getElementById('factButton').addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const factDisplay = document.getElementById('factDisplay');
+            factDisplay.textContent = facts[randomIndex];
+            factDisplay.style.opacity = 1; // Trigger fade-in animation
+        });
+    </script>
+</body>
+</html>
